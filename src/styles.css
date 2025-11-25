@@ -1,0 +1,46 @@
+/* 🎨 خلفية الشاشة بالكامل */
+body {
+  background-image: url("https://thesoftedge.com/wp-content/uploads/2020/08/iStock-1153032746-scaled.jpg");
+  background-size: cover; /* تخلي الصورة تغطي الشاشة بالكامل */
+  background-position: center; /* الصورة تبقى في النص */
+  background-repeat: no-repeat; /* ما تتكررش */
+  background-attachment: fixed; /* تبقى ثابتة لما تسكروول */
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 💎 خلي الكروت شبه زجاج شفاف */
+.card {
+  background: rgba(255, 255, 255, 0.85); /* لون أبيض شفاف */
+  backdrop-filter: blur(10px); /* تأثير ضبابي أنيق */
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ✨ تحسين شكل العناوين */
+h3 {
+  font-weight: bold;
+  color: #6a11cb; /* بنفسجي ناعم */
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔘 زر التسجيل أو الدخول */
+.btn-primary {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <!-- Project Name / Home Icon -->
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <i class="bi bi-calendar-event me-2"></i> Event Planner
+    </a>
+
+    <!-- Toggle for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+
+        <!-- Auth Buttons -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">
+            <i class="bi bi-person-plus me-1"></i> Sign Up
+          </a>
+        </li>
+
+        <!-- Calendar Quick Link -->
+        <li class="nav-item">
+          <a class="nav-link btn-primary-outline" routerLink="/calendar">
+            <i class="bi bi-calendar3 me-1"></i> Calendar
+          </a>
+        </li>
+
+        <!-- Events Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-list-ul me-1"></i> Events
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" routerLink="/events">Event List</a></li>
+            <li><a class="dropdown-item" routerLink="/events/create">Create Event</a></li>
+            <li><a class="dropdown-item" routerLink="/events/search">Search Event</a></li>
+            <li><a class="dropdown-item" routerLink="/events/filter">Filter Event</a></li>
+            <li><a class="dropdown-item" routerLink="/calendar">Calendar</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

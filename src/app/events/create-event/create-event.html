@@ -1,0 +1,17 @@
+<div class="create-event-container">
+  <form [formGroup]="eventForm" *ngIf="!submitted" (ngSubmit)="submitForm()">
+    <input type="text" placeholder="Title" formControlName="title" required />
+    <input type="date" formControlName="date" required />
+    <input type="time" formControlName="time" />
+    <input type="text" placeholder="Location" formControlName="location" />
+    <textarea placeholder="Description" formControlName="description"></textarea>
+
+    <div *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</div>
+
+    <button type="submit">Create Event</button>
+  </form>
+
+  <div *ngIf="submitted" class="success-message animate-success">
+    {{ successMessage }}
+  </div>
+</div>

@@ -1,0 +1,133 @@
+/* 🌅 الخلفية الرئيسية */
+body {
+  background-image: url("https://thesoftedge.com/wp-content/uploads/2020/08/iStock-1153032746-scaled.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: white;
+}
+
+/* Landing Container - زي ما هو */
+.landing-container {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.typing-text {
+  font-size: 60px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 3s steps(15) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 15ch; } 
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 3s;
+}
+
+.description {
+  font-size: 18px;
+  color: #dfefff;
+  max-width: 600px;
+  margin: 20px auto 0;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 150px 20px 100px 20px;
+  position: relative;
+}
+
+/* Feature Card - شفاف وكبير عند الظهور */
+.feature-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.feature-card.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.feature-img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.feature-content h3 {
+  font-weight: bold;
+  color: #6a11cb;
+  margin-bottom: 10px;
+}
+
+.feature-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}

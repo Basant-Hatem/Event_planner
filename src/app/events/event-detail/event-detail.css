@@ -1,0 +1,107 @@
+.event-title {
+  font-size: 2.2em;       
+  font-weight: 700;       
+  color: #4e342e;         
+  margin-bottom: 20px;
+  text-align: left;     
+}
+
+.event-detail-container {
+  background-color: #fffaf0; 
+  color: #4e342e; 
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-detail-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.event-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #a0522d; /* بني متوسط */
+}
+
+.event-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  background-color: #fff8e1;
+  padding: 15px 20px;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: default;
+}
+
+.info-box:hover {
+  transform: translateY(-3px);
+  background-color: #d4af37; /* ذهبي */
+  color: black;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.event-description h3 {
+  margin-bottom: 10px;
+  color: #a0522d;
+}
+
+.event-description p {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-radius: 12px;
+  line-height: 1.5;
+  transition: background-color 0.2s;
+}
+
+.event-description p:hover {
+  background-color: #d4af37;
+  color: black;
+}
+.btn-back {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-back:hover {
+  background-color: #aa755d;
+  color: black;
+  transform: scale(1.05);
+}
+.btn-delete {
+  margin-top: 10px;
+  margin-left: 300px;
+  padding: 10px 20px;
+  background-color: #c62828; /* أحمر */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #8b3a2a;
+  transform: scale(1.05);
+}

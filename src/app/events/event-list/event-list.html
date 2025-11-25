@@ -1,0 +1,14 @@
+<div class="event-list-container">
+  <div *ngIf="message" class="remove-message">{{ message }}</div>
+
+  <div class="event-card" *ngFor="let e of events">
+    <h3>{{ e.title }}</h3>
+    <p>{{ e.date }} - {{ formatTime(e.time) }}</p>
+    <p>{{ e.location }}</p>
+
+    <div class="card-buttons">
+      <button class="details-btn" (click)="viewDetails(e.id)">Details</button>
+      <button class="remove-btn" (click)="deleteEvent(e.id)">Delete</button>
+    </div>
+  </div>
+</div>

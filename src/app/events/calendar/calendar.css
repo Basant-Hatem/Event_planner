@@ -1,0 +1,101 @@
+/* Container */
+.calendar-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* FullCalendar Header */
+.fc .fc-toolbar-title {
+  color: #6a3e0f;
+  font-weight: bold;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #8b5e3c;
+  font-weight: 600;
+}
+
+/* Day Numbers */
+.fc-daygrid-day-number {
+  color: #5D4037;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Highlight days with events */
+.fc-day-with-events {
+  background-color: #FFF8DC;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(212, 163, 115, 0.5);
+}
+
+/* Event Styles */
+.fc-event {
+  background-color: #d4a373;
+  color: #3e2f1c;
+  border: none;
+  border-radius: 8px;
+  padding: 3px 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Events list */
+.event-list {
+  margin-top: 30px;
+}
+
+.event-list h4 {
+  color: #6a3e0f;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.event-card {
+  background: #fef8f5;
+  border-left: 5px solid #d4a373;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.event-card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.event-card h5 {
+  color: #6a3e0f;
+  margin-bottom: 5px;
+}
+
+.event-card p {
+  color: #5c4033;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #d4a373, #b8860b);
+  border: none;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #b8860b, #d4a373);
+}

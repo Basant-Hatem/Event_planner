@@ -1,0 +1,26 @@
+<div class="search-container">
+  <h2>Search Events</h2>
+
+  <input type="text" placeholder="Search by title or description..." [(ngModel)]="keyword" (input)="search()" />
+
+  <div *ngIf="results.length; else noEvent">
+    <ul>
+      <li *ngFor="let e of results">
+        <div class="event-item">
+          <div class="event-info">
+            <strong [innerHTML]="highlight(e.title)"></strong> —
+            <span [innerHTML]="highlight(e.description)"></span>
+          </div>
+          <div class="event-buttons">
+            <button class="details-btn" [routerLink]="['/events', e.id]">Details</button>
+            <button class="remove-btn" (click)="deleteEvent(e.id)">Delete</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noEvent>
+    <p class="no-event">No events found.</p>
+  </ng-template>
+</div>

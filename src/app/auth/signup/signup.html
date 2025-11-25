@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow" style="width: 420px;">
+    <h3 style="color:#a0522d">Create Account</h3>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Enter your email" />
+        <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" class="text-danger mt-1">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3 position-relative">
+        <label class="form-label">Password</label>
+        <input [type]="showPassword ? 'text' : 'password'" class="form-control" formControlName="password" placeholder="Enter password" />
+        <i
+          class="bi"
+          [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+          (click)="togglePasswordVisibility()"
+          style="position: absolute; right: 12px; top: 38px; cursor: pointer;"
+        ></i>
+        <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" class="text-danger mt-1">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="mb-3 position-relative">
+        <label class="form-label">Confirm Password</label>
+        <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" formControlName="confirmPassword" placeholder="Re-enter password" />
+        <i
+          class="bi"
+          [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"
+          (click)="toggleConfirmPasswordVisibility()"
+          style="position: absolute; right: 12px; top: 38px; cursor: pointer;"
+        ></i>
+
+        <div *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.invalid" class="text-danger mt-1">
+          Please confirm your password.
+        </div>
+
+        <div *ngIf="passwordsDontMatch" class="text-danger mt-1">
+          Passwords do not match.
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="signupForm.invalid || passwordsDontMatch">
+        Sign Up
+      </button>
+
+      <!-- Link to Login -->
+      <p class="text-center mt-3">
+        Already have an account?
+        <a routerLink="/login" class="text-decoration-none">Login</a>
+      </p>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="filter-container">
+  <h2>Filter Events</h2>
+
+  <input type="date" [(ngModel)]="selectedDate" (change)="filter()" />
+  <select [(ngModel)]="dayFilter" (change)="filter()">
+    <option *ngFor="let day of daysOptions" [value]="day">{{ day }}</option>
+  </select>
+
+  <div *ngIf="filteredEvents.length; else noEvent">
+    <ul>
+      <li *ngFor="let e of filteredEvents" class="event-item">
+        <span>{{ e.title }} — {{ e.date }}</span>
+        <div class="event-buttons">
+          <button class="details-btn" [routerLink]="['/events', e.id]">Details</button>
+          <button class="remove-btn" (click)="deleteEvent(e.id)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noEvent>
+    <p class="no-event">We don't have events with this date or day</p>
+  </ng-template>
+</div>

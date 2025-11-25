@@ -1,0 +1,31 @@
+<div class="calendar-container">
+  <full-calendar [options]="calendarOptions"></full-calendar>
+
+  <!-- Events list -->
+  <div *ngIf="showEventList" class="event-list">
+    <h4>Events on selected day:</h4>
+    <div *ngFor="let event of selectedEvents" class="event-card">
+      <h5>{{ event.title }}</h5>
+      <p>{{ event.description }}</p>
+      <button class="btn btn-sm btn-primary" (click)="openModal(event)">Details</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" #eventModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedEvent?.title }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ selectedEvent?.description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
