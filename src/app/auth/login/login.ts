@@ -44,8 +44,8 @@ export class LoginComponent {
     this.http.post('http://127.0.0.1:5000/api/user/login', { email, password }).subscribe({
       next: (res: any) => {
         
-        if(res.token){
-          localStorage.setItem('token', res.token);
+        if(res.access_token){
+          localStorage.setItem('jwtToken',  res.access_token);
         }
 
         alert('Login successful!');

@@ -5,11 +5,10 @@ import { EventService } from '../../core/services/event';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-create-event',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule,HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, HttpClientModule],
   templateUrl: './create-event.html',
   styleUrls: ['./create-event.css']
 })
@@ -19,7 +18,11 @@ export class CreateEventComponent {
   successMessage = '';
   errorMessage = '';
 
-  constructor(private fb: FormBuilder, private eventService: EventService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private eventService: EventService,
+    private router: Router
+  ) {
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
       date: ['', Validators.required],
@@ -36,21 +39,23 @@ export class CreateEventComponent {
     }
 
     this.errorMessage = '';
-    const token = localStorage.getItem('token'); 
+    this.submitted = true;
 
     this.eventService.createEvent(this.eventForm.value).subscribe({
       next: () => {
-        this.submitted = true;
         this.successMessage = 'Event added successfully!';
         this.eventForm.reset();
+
+        // Redirect after a short delay
         setTimeout(() => {
           this.submitted = false;
-          this.router.navigate(['/events']); 
-        }, 2000);
+          this.router.navigate(['/events']);
+        }, 1500);
       },
       error: (err) => {
         console.error(err);
-        this.errorMessage = err.error?.message || 'Failed to create event.';
+        this.errorMessage = err.error?.error || 'Failed to create event.';
+        this.submitted = false;
       }
     });
   }
