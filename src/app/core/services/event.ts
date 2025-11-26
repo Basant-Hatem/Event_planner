@@ -38,18 +38,41 @@ export class EventService {
   }
 
   // Get a single event by ID
-  getEventById(id: number): Observable<Event> {
-    return this.http.get<Event>(`${this.apiUrl}/${id}`, this.getHeaders());
+  getEventById(eventId: number): Observable<Event> {
+    return this.http.get<Event>(`${this.apiUrl}/${eventId}`, this.getHeaders());
   }
 
   // Create a new event
-  createEvent(event: Event): Observable<Event> {
-    return this.http.post<Event>(`${this.apiUrl}/create`, event, this.getHeaders());
+  createEvent(event: Event): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/create`, event, this.getHeaders());
   }
 
-  // Delete an event by ID (organizer only)
-  deleteEvent(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`, this.getHeaders());
+  // Invite a user to an event
+  inviteUser(eventId: number, inviteeEmail: string): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}/invite`,
+      { event_id: eventId, email: inviteeEmail },
+      this.getHeaders()
+    );
+  }
+
+  // Respond to an event
+  respondToEvent(eventId: number, status: 'Going' | 'Maybe' | 'Not Going'): Observable<any> {
+    return this.http.post<any>(
+      `${this.apiUrl}/respond`,
+      { event_id: eventId, status },
+      this.getHeaders()
+    );
+  }
+
+  // Get attendees for an event
+  getAttendees(eventId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/attendees/${eventId}`, this.getHeaders());
+  }
+
+  // Delete an event
+  deleteEvent(eventId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/delete/${eventId}`, this.getHeaders());
   }
 
   // Search events
