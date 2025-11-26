@@ -8,7 +8,7 @@ import { EventDetailComponent } from './events/event-detail/event-detail';
 import { CreateEventComponent } from './events/create-event/create-event';
 import { SearchComponent } from './events/search/search';
 import { FilterComponent } from './events/filter/filter';
-import { InvitedEventsComponent } from './events/invited-events/invited-events';
+import { UserEventsComponent } from './events/invited-events/invited-events';
 export const routes: Routes = [
   { path: '', component: Landing },            // الصفحة الرئيسية
   { path: 'login', component: LoginComponent },
@@ -19,7 +19,7 @@ export const routes: Routes = [
   { path: 'events/create', component: CreateEventComponent },
   { path: 'events/search', component: SearchComponent },
   { path: 'events/filter', component: FilterComponent },
-    { path: 'events/invited', component: InvitedEventsComponent },
+    { path: 'events/invited', component: UserEventsComponent},
     { path: 'events/:id', component: EventDetailComponent },
   { path: '**', redirectTo: '' }               // أي route مش موجود يرجع Landing
 ];

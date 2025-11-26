@@ -1,16 +1,32 @@
 <div class="event-list-container">
 
-  <!-- Title -->
+  <!-- Organized Events -->
+  <h2 class="events-title">Organized Events</h2>
+  <div *ngIf="organizedEvents.length === 0" class="no-event">
+    You haven't organized any events yet
+  </div>
+  <div class="event-card" *ngFor="let e of organizedEvents">
+    <h3>{{ e.title }}</h3>
+    <p>{{ e.date }} - {{ formatTime(e.time) }}</p>
+    <p>{{ e.location }}</p>
+    <div class="card-buttons">
+      <button class="details-btn" (click)="viewDetails(e.id)">Details</button>
+    </div>
+  </div>
+
+  <!-- Invited Events -->
   <h2 class="events-title">Invited Events</h2>
-  <div *ngIf="message" class="remove-message">{{ message }}</div>
-   <!-- If no invited events -->
+  <div *ngIf="message" class="info-message">{{ message }}</div>
   <div *ngIf="invitedEvents.length === 0 && !message" class="no-event">
-   No invitations received yet
+    No invitations received yet
   </div>
   <div class="event-card" *ngFor="let e of invitedEvents">
     <h3>{{ e.title }}</h3>
     <p>{{ e.date }} - {{ formatTime(e.time) }}</p>
     <p>{{ e.location }}</p>
+
+    <!-- Show current response -->
+    <p *ngIf="e.response">Your Response: <strong>{{ e.response }}</strong></p>
 
     <div class="card-buttons">
       <button class="respond-btn" (click)="respond(e.id, 'Going')">Going</button>
@@ -19,4 +35,5 @@
       <button class="details-btn" (click)="viewDetails(e.id)">Details</button>
     </div>
   </div>
+
 </div>
