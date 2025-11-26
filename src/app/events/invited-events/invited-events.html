@@ -1,0 +1,22 @@
+<div class="event-list-container">
+
+  <!-- Title -->
+  <h2 class="events-title">Invited Events</h2>
+  <div *ngIf="message" class="remove-message">{{ message }}</div>
+   <!-- If no invited events -->
+  <div *ngIf="invitedEvents.length === 0 && !message" class="no-event">
+   No invitations received yet
+  </div>
+  <div class="event-card" *ngFor="let e of invitedEvents">
+    <h3>{{ e.title }}</h3>
+    <p>{{ e.date }} - {{ formatTime(e.time) }}</p>
+    <p>{{ e.location }}</p>
+
+    <div class="card-buttons">
+      <button class="respond-btn" (click)="respond(e.id, 'Going')">Going</button>
+      <button class="respond-btn" (click)="respond(e.id, 'Maybe')">Maybe</button>
+      <button class="respond-btn" (click)="respond(e.id, 'Not Going')">Not Going</button>
+      <button class="details-btn" (click)="viewDetails(e.id)">Details</button>
+    </div>
+  </div>
+</div>

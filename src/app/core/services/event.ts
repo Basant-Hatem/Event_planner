@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Event } from '../models/event';
 import { Observable } from 'rxjs';
+import { Attendee} from '../models/Attendee'
+
 
 @Injectable({
   providedIn: 'root'
@@ -66,9 +68,13 @@ export class EventService {
   }
 
   // Get attendees for an event
-  getAttendees(eventId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/attendees/${eventId}`, this.getHeaders());
-  }
+ // getAttendees(eventId: number): Observable<any> {
+  //  return this.http.get<any>(`${this.apiUrl}/attendees/${eventId}`, this.getHeaders());
+  //}
+  getAttendees(eventId: number): Observable<Attendee[]> {
+  return this.http.get<Attendee[]>(`${this.apiUrl}/attendees/${eventId}`, this.getHeaders());
+}
+
 
   // Delete an event
   deleteEvent(eventId: number): Observable<any> {

@@ -1,31 +1,24 @@
-.event-title {
-  font-size: 2.2em;       
-  font-weight: 700;       
-  color: #4e342e;         
-  margin-bottom: 20px;
-  text-align: left;     
-}
-
 .event-detail-container {
-  background-color: #fffaf0; 
-  color: #4e342e; 
+  background-color: #fffaf0;
+  color: #4e342e;
   max-width: 700px;
   margin: 30px auto;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .event-detail-container:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .event-title {
-  font-size: 2em;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #4e342e;
   margin-bottom: 20px;
-  color: #a0522d; /* بني متوسط */
+  text-align: left;
 }
 
 .event-info {
@@ -46,7 +39,7 @@
 
 .info-box:hover {
   transform: translateY(-3px);
-  background-color: #d4af37; /* ذهبي */
+  background-color: #d4af37;
   color: black;
 }
 
@@ -72,6 +65,77 @@
   background-color: #d4af37;
   color: black;
 }
+
+.btn-invite-people, .btn-invite, .btn-show-attendance {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: #4e342e;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-invite-people:hover, .btn-invite:hover, .btn-show-attendance:hover {
+  background-color: #aa755d;
+  color: white;
+  transform: scale(1.05);
+}
+
+.invite-section {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invite-input {
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #a0522d;
+  outline: none;
+  font-size: 1em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.invite-input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.invite-message {
+  font-size: 0.95em;
+  color: #4e342e;
+  background-color: #fff8e1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.attendance-section {
+  margin-top: 20px;
+  background-color: #fff8e1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.attendance-section h3 {
+  color: #a0522d;
+  margin-bottom: 10px;
+}
+
+.attendance-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.attendance-section li {
+  padding: 5px 0;
+  color: #4e342e;
+}
+
 .btn-back {
   margin-top: 20px;
   margin-right: 10px;
@@ -89,11 +153,12 @@
   color: black;
   transform: scale(1.05);
 }
+
 .btn-delete {
   margin-top: 10px;
-  margin-left: 300px;
+  margin-left: 10px;
   padding: 10px 20px;
-  background-color: #c62828; /* أحمر */
+  background-color: #c62828;
   color: white;
   border: none;
   border-radius: 12px;
@@ -104,4 +169,52 @@
 .btn-delete:hover {
   background-color: #8b3a2a;
   transform: scale(1.05);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.no-attendance {
+  margin-top: 10px;
+  color: #a0522d;
+  font-weight: 600;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.attendance-table th {
+  background-color: #d4af37;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.attendance-table td {
+  padding: 10px;
+  color: #4e342e;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.attendance-table tr:hover td {
+  background-color: #fff3cd;
+}
+
+
+.no-attendance {
+  margin-top: 10px;
+  color: #a0522d;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
 }
